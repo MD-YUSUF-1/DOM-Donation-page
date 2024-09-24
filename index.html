@@ -25,7 +25,7 @@
 <body class="font-lexend bg-[#F9F7F3]">
     <Header>
         <!-- Navbar starts here -->
-        <div class="navbar px-44 pt-6 pb-16">
+        <div class="navbar px-44 pt-6 pb-16 ">
             <div class="navbar-start">
                 <div class="">
                     <button class="px-8 py-3 bg-[#B4F461] rounded-lg text-xl font-semibold">Blog</button>
@@ -37,13 +37,13 @@
             </div>
             <div class="navbar-end gap-3">
                 <img src="./assets/coin.png" alt="">
-                <h3 class="font-medium text-xl">5500 BDT</h3>
+                <h3 class="font-medium text-xl"><span id="my-balance">5500</span> BDT</h3>
             </div>
         </div>
         <!-- Navbar ends here -->
         <!-- Two buttons starts here -->
 
-        <div class="pt-20 pb-10  flex gap-3 justify-center bg-[#FFF]">
+        <div class=" pt-16  flex gap-3 justify-center bg-[#FFF]">
             <div class="">
                 <button class="px-8 py-4 bg-[#B4F461] rounded-lg text-xl font-semibold">Donation</button>
             </div>
@@ -56,7 +56,7 @@
     <main>
         <section class="pb-36">
             <!-- Donation options Starts -->
-            <div class="hidden">
+            <div class="">
                 <!-- Card-1 -->
                 <div class="px-36 pt-8 bg-[#FFF]">
                     <div class=" p-8   border border-[#1111111A] rounded-2xl ">
@@ -66,7 +66,7 @@
                                 <div
                                     class=" inline-flex items-center px-4 py-3 rounded-lg bg-[#1111110D] gap-2 self-start">
                                     <img src="./assets/coin.png" alt="">
-                                    <h3 class="text-[#111111B3]">0 BDT</h3>
+                                    <h3 class="text-[#111111B3]"><span id="total-noakhali-donation">0</span> BDT</h3>
                                 </div>
                                 <h1 class="text-xl font-bold">Donate for Flood at Noakhali, Bangladesh</h1>
                                 <p class=" text-[#111111B3] font-light">
@@ -77,11 +77,11 @@
                                     supporting the relief efforts and making a positive impact on the lives of those in
                                     need.
                                 </p>
-                                <input type="text" name="" id=""
+                                <input type="text" name="" id="noakhali-donation-ammount"
                                     class="p-[18px] border border-[#1111114D] rounded-lg text-[#11111166] font-light"
                                     placeholder="Write Donation Amount">
                                 <div class="">
-                                    <button
+                                    <button id="noakhali-donation"
                                         class="w-full px-8 py-4 bg-[#B4F461] rounded-lg text-xl font-semibold ">Donate
                                         Now</button>
                                 </div>
@@ -180,6 +180,7 @@
             <!-- History option ends -->
         </section>
     </main>
+    <script src="./js/utils.js"></script>
 </body>
 
 </html>
