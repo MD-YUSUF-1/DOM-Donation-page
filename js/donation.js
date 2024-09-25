@@ -9,6 +9,8 @@ function calculateTotalDonation(strDAmmount, strDTotal) {
     if (dAmmount < 0) {
         alert("wrong amount")
         document.getElementById("noakhali-donation-ammount").value = "";
+        document.getElementById("feni-donation-ammount").value = "";
+        document.getElementById("quota-donation-ammount").value = "";
         return;
     }
     let totalDonationAfterDonate = dAmmount + DTotal;
@@ -18,9 +20,11 @@ function calculateTotalDonation(strDAmmount, strDTotal) {
 function calculateBalanceDeduction(strDAmmount, strMyBalance) {
     let dAmmount = parseInt(strDAmmount);
     let myBalance = parseInt(strMyBalance);
-    if (dAmmount > myBalance || dAmmount< 0) {
+    if (dAmmount > myBalance || dAmmount< 0 ) {
         alert("wrong amount")
         document.getElementById("noakhali-donation-ammount").value = "";
+        document.getElementById("feni-donation-ammount").value = "";
+        document.getElementById("quota-donation-ammount").value = "";
         return;
     }
     let balanceLeftAfterDonation = myBalance - dAmmount;
@@ -29,6 +33,10 @@ function calculateBalanceDeduction(strDAmmount, strMyBalance) {
 
 nDonationBtn.addEventListener("click", function () {
     const strNDAmmount = document.getElementById("noakhali-donation-ammount").value;
+    if(strNDAmmount === ""){
+        return;
+    }
+    console.log(strNDAmmount);
     const nDTotalGet = document.getElementById("total-noakhali-donation");
     const strNDTotal = nDTotalGet.innerText;
     const myBalanceGet = document.getElementById("my-balance");
@@ -62,6 +70,9 @@ nDonationBtn.addEventListener("click", function () {
 
 fDonationBtn.addEventListener("click", function () {
     const strFDAmmount = document.getElementById("feni-donation-ammount").value;
+    if(strFDAmmount === ""){
+        return;
+    }
     const fDTotalGet = document.getElementById("total-feni-donation");
     const strFDTotal = fDTotalGet.innerText;
     const myBalanceGet = document.getElementById("my-balance");
@@ -94,6 +105,9 @@ fDonationBtn.addEventListener("click", function () {
 
 qDonationBtn.addEventListener("click", function () {
     const strQDAmmount = document.getElementById("quota-donation-ammount").value;
+    if(strQDAmmount === ""){
+        return;
+    }
     const qDTotalGet = document.getElementById("total-quota-donation");
     const strQDTotal = qDTotalGet.innerText;
     const myBalanceGet = document.getElementById("my-balance");
@@ -122,3 +136,19 @@ qDonationBtn.addEventListener("click", function () {
     const historyContent = document.getElementById("history-content")
     historyContent.append(historyItem);
 })
+
+// validation for modal show 
+function checkValidation(){
+    const strNDAmmount = document.getElementById("noakhali-donation-ammount").value;
+    const strFDAmmount = document.getElementById("feni-donation-ammount").value;
+    const strQDAmmount = document.getElementById("quota-donation-ammount").value;
+    const ndAmount = parseInt(strNDAmmount)
+    const fdAmount = parseInt(strFDAmmount)
+    const qdAmount = parseInt(strQDAmmount)
+    if (ndAmount === "" || fdAmount==="" || qdAmount === "" || ndAmount <0 || fdAmount<0 || qdAmount <0) {
+        return;
+    }
+    document.getElementById("my_modal_1").showModal();
+
+}
+
