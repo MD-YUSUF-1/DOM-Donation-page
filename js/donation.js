@@ -2,7 +2,7 @@ const nDonationBtn = document.getElementById("noakhali-donation");
 const fDonationBtn = document.getElementById("feni-donation");
 const qDonationBtn = document.getElementById("quota-donation");
 
-
+// calculation of total donation
 function calculateTotalDonation(strDAmmount, strDTotal) {
     let dAmmount = parseInt(strDAmmount);
     let DTotal = parseInt(strDTotal);
@@ -17,6 +17,8 @@ function calculateTotalDonation(strDAmmount, strDTotal) {
     return totalDonationAfterDonate;
 
 }
+
+// calculation of remaining balance
 function calculateBalanceDeduction(strDAmmount, strMyBalance) {
     let dAmmount = parseInt(strDAmmount);
     let myBalance = parseInt(strMyBalance);
@@ -31,6 +33,8 @@ function calculateBalanceDeduction(strDAmmount, strMyBalance) {
     return balanceLeftAfterDonation;
 }
 
+
+// Donation for Noakhali calculation
 nDonationBtn.addEventListener("click", function () {
     const strNDAmmount = document.getElementById("noakhali-donation-ammount").value;
     if(strNDAmmount === ""){
@@ -67,7 +71,7 @@ nDonationBtn.addEventListener("click", function () {
     const historyContent = document.getElementById("history-content")
     historyContent.append(historyItem);
 })
-
+// Donation for feni calculation
 fDonationBtn.addEventListener("click", function () {
     const strFDAmmount = document.getElementById("feni-donation-ammount").value;
     if(strFDAmmount === ""){
@@ -102,7 +106,7 @@ fDonationBtn.addEventListener("click", function () {
     historyContent.append(historyItem);
 })
 
-
+// Donation for quota calculation
 qDonationBtn.addEventListener("click", function () {
     const strQDAmmount = document.getElementById("quota-donation-ammount").value;
     if(strQDAmmount === ""){
@@ -149,6 +153,5 @@ function checkValidation(){
         return;
     }
     document.getElementById("my_modal_1").showModal();
-
 }
 
