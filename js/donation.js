@@ -50,6 +50,14 @@ nDonationBtn.addEventListener("click", function () {
         nDTotalGet.innerText = totalDonationAfterDonate;
     }
 
+    const historyItem= document.createElement("div")
+    historyItem.className=" p-8 border border-[#1111111A] rounded-2xl ";
+    historyItem.innerHTML=`
+     <h3 class="text-xl font-bold pb-4">${strNDAmmount} Taka is Donated for Flood at Noakhali, Bangladesh</h3>
+    <p class=" text-[#111111B3] font-light ">Date : ${new Date().toLocaleDateString() }  ${new Date().toLocaleTimeString() } (Bangladesh Standard Time)</p>
+    `
+    const historyContent = document.getElementById("history-content")
+    historyContent.append(historyItem);
 })
 
 fDonationBtn.addEventListener("click", function () {
@@ -73,7 +81,17 @@ fDonationBtn.addEventListener("click", function () {
     else {
         fDTotalGet.innerText = totalDonationAfterDonate;
     }
+    const historyItem= document.createElement("div")
+    historyItem.className=" p-8 border border-[#1111111A] rounded-2xl ";
+    historyItem.innerHTML=`
+     <h3 class="text-xl font-bold pb-4">${strFDAmmount} Taka is Donated for Flood Relief in Feni,Bangladesh</h3>
+    <p class=" text-[#111111B3] font-light ">Date : ${new Date().toLocaleDateString() }  ${new Date().toLocaleTimeString() } (Bangladesh Standard Time)</p>
+    `
+    const historyContent = document.getElementById("history-content")
+    historyContent.append(historyItem);
 })
+
+
 qDonationBtn.addEventListener("click", function () {
     const strQDAmmount = document.getElementById("quota-donation-ammount").value;
     const qDTotalGet = document.getElementById("total-quota-donation");
@@ -95,4 +113,12 @@ qDonationBtn.addEventListener("click", function () {
     else {
         qDTotalGet.innerText = totalDonationAfterDonate;
     }
+    const historyItem= document.createElement("div")
+    historyItem.className=" p-8 border border-[#1111111A] rounded-2xl ";
+    historyItem.innerHTML=`
+     <h3 class="text-xl font-bold pb-4">${strQDAmmount} Taka is Donated for Aid for Injured in the Quota Movement</h3>
+    <p class=" text-[#111111B3] font-light ">Date : ${new Date().toLocaleDateString() }  ${new Date().toLocaleTimeString() } (Bangladesh Standard Time)</p>
+    `
+    const historyContent = document.getElementById("history-content")
+    historyContent.append(historyItem);
 })
